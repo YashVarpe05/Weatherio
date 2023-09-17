@@ -141,7 +141,7 @@ body {
 	background-color: var(--background);
 	color: var(--on-background);
 	font-size: var(--body-3);
-	overflow: hidden;
+	/* overflow: hidden; */
 	/* height: 300vh; */
 }
 :focus-visible {
@@ -479,6 +479,7 @@ article.container::before {
 	content: "";
 	position: fixed;
 	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 40px;
 	background-image: var(--gradient-1);
@@ -527,26 +528,325 @@ article.container::before {
   #HIGHLIGHTS
 \*-----------------------------------*/
 
+.forecast-card .title-2 {
+	margin-block-end: 0;
+}
+
+.forecast-card :is(.card-item, .icon-wrapper) {
+	display: flex;
+	align-items: center;
+}
+
+.forecast-card .card-item:not(:last-child) {
+	margin-block-end: 12px;
+}
+.forecast-card .icon-wrapper {
+	gap: 8px;
+}
+.forecast-card .label-1 {
+	color: var(--on-surface-variant);
+	font-weight: var(--weight-semiBold);
+}
+
+.forecast-card .card-item > .label-1 {
+	width: 100%;
+	text-align: right;
+}
 /*-----------------------------------*\
   #HOURLY FORECAST
 \*-----------------------------------*/
+
+.highlights .m-icon {
+	font-size: 3.2rem;
+}
+.highlight-list {
+	display: grid;
+	gap: 20px;
+}
+
+.highlight-list .title-3 {
+	color: var(--on-surface-variant);
+	margin-block-end: 20px;
+}
+.highlights .card-sm {
+	background-color: var(--black-alpha-10);
+	position: relative;
+}
+.highlight-card :is(.wrapper, .card-list, .card-item) {
+	display: flex;
+	align-items: center;
+}
+
+.highlight-card .wrapper {
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.highlight-card .card-list {
+	flex-wrap: wrap;
+	flex-grow: 1;
+	row-gap: 8px;
+}
+
+.highlight-card .card-item {
+	width: 50%;
+	justify-content: flex-end;
+	gap: 4px;
+}
+
+.highlight-card .label-1 {
+	color: var(--on-surface-variant);
+}
+
+.badge {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	padding: 2px 12px;
+	border-radius: var(--radius-pill);
+	font-weight: var(--weight-semiBold);
+	cursor: help;
+}
+
+.badge.aqi-1 {
+	background-color: var(--bg-aqi-1);
+	color: var(--on-bg-aqi-1);
+}
+
+.badge.aqi-2 {
+	background-color: var(--bg-aqi-2);
+	color: var(--on-bg-aqi-2);
+}
+.badge.aqi-3 {
+	background-color: var(--bg-aqi-3);
+	color: var(--on-bg-aqi-3);
+}
+.badge.aqi-4 {
+	background-color: var(--bg-aqi-4);
+	color: var(--on-bg-aqi-4);
+}
+.badge.aqi-5 {
+	background-color: var(--bg-aqi-5);
+	color: var(--on-bg-aqi-5);
+}
+
+.highlight-card.two .card-item {
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 8px 16px;
+}
+
+.highlight-card.two .label-1 {
+	margin-block-end: 4px;
+}
 
 /*-----------------------------------*\
   #FORECAST
 \*-----------------------------------*/
 
+.slider-container {
+	overflow-x: auto;
+	margin-inline: -16px;
+}
+.slider-container::-webkit-scrollbar {
+	display: none;
+}
+
+.slider-list {
+	display: flex;
+	gap: 12px;
+}
+
+.slider-list:first-child {
+	margin-block-end: 16px;
+}
+
+.slider-list::before,
+.slider-list::after {
+	content: "";
+	min-width: 4px;
+}
+
+.slider-list .slider-item {
+	min-width: 110px;
+	flex: 1 1 100%;
+}
+.slider-card {
+	text-align: center;
+}
+.slider-item .weather-icon {
+	margin-inline: auto;
+	margin-block: 12px;
+}
+
 /*-----------------------------------*\
   #LOADING
 \*-----------------------------------*/
+
+.loading {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background);
+	/* display: grid; */
+	place-items: center;
+	z-index: 1;
+	display: none;
+}
+.loading::before {
+	content: "";
+	width: 48px;
+	height: 48px;
+	border: 4px solid var(--on-background);
+	border-block-start-color: transparent;
+	border-radius: var(--radius-circle);
+	animation: loading 500ms linear infinite;
+}
 
 /*-----------------------------------*\
   #ERROR SECTION
 \*-----------------------------------*/
 
+.error-content {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	height: 100svh;
+	background-color: var(--background);
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	z-index: 8;
+}
+
+.error-content .btn-primary {
+	margin-block-start: 20px;
+}
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
 
+.footer,
+.footer .body-3:last-child {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.footer {
+	color: var(--on-surface-variant);
+	text-align: center;
+	gap: 12px 24px;
+	margin-block-start: 28px;
+}
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/* 
+	* responsive for large than 768px screen
+
+*/
+
+@media (min-width: 768px) {
+	/* reused style */
+
+	.container {
+		padding: 24px;
+	}
+	.title-1 {
+		--title-1: 2.4rem;
+	}
+	.section > .title-2 {
+		margin-block-end: 16px;
+	}
+	.card-lg {
+		padding: 24px;
+	}
+	.card-sm {
+		padding: 20px;
+		display: grid;
+		grid-template-columns: min-content 1fr;
+	}
+	.badge {
+		top: 20px;
+		right: 20px;
+	}
+	/* header */
+
+	.header-actions {
+		gap: 24px;
+	}
+
+	.header .btn-primary {
+		padding-inline: 16px;
+	}
+	.header .btn-primary .span {
+		display: block;
+	}
+	.search-view {
+		clip-path: circle(3% at calc(100%-273px) 6%);
+	}
+
+	/* Main */
+
+	main {
+		height: calc(100vh-96px);
+		height: calc(100svh-96px);
+	}
+	article.container {
+		padding-block-start: 0;
+		grid-template-columns: 280px minmax(0, 1fr);
+		align-items: flex-start;
+		gap: 24px;
+	}
+	.content-left {
+		position: sticky;
+		top: 0;
+	}
+	.section:not(:last-child) {
+		margin-block: 20px;
+	}
+	.forecast-card .card-item:not(:last-child) {
+		margin-block-end: 16px;
+	}
+	.highlight-list {
+		grid-template-columns: 1fr 1fr;
+	}
+	.highlight-card:nth-child(-n + 2) {
+		grid-column: span 2;
+		height: 160px;
+	}
+	.highlight-card:nth-child(n + 3) {
+		height: 120px;
+	}
+	.highlights .m-icon {
+		font-size: 3.6rem;
+	}
+	.highlight-card.one .card-item {
+		width: 25%;
+		flex-direction: column-reverse;
+		gap: 8px;
+	}
+	.slider-container {
+		margin-inline: 0 -24px;
+		border-bottom-left-radius: var(--radius-16);
+		border-top-left-radius: var(--radius-16);
+	}
+	.slider-list::before {
+		display: none;
+	}
+	.slider-list::after {
+		min-width: 12px;
+	}
+	.hourly-forecast .card-sm {
+		padding: 16px;
+	}
+}
