@@ -16,9 +16,12 @@ const api_key = "7fb0f71797c059a1ba3cb7a387646478";
  */
 
 export const fetchData = (URL, callback) => {
-	fetch(`${URL}%app_id=${api_key}`)
+	fetch(`${URL}&appid=${api_key}`)
 		.then((res) => res.json())
-		.then((data) => callback(data));
+		.then((data) => callback(data))
+		.catch((error) => {
+			console.log("Error fetching data:", error);
+		});
 };
 
 export const url = {
@@ -35,11 +38,10 @@ export const url = {
 		return `http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`;
 	},
 	/**
-	 *
 	 * @param {string} query Searching query eg. 'India' , Maharashtra,London ....etc
-	 * @returns
 	 */
 	geo(query) {
-		return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`;
+		const encodedQuery = encodeURIComponent(query);
+		return `http://api.openweathermap.org/geo/1.0/direct?q=${encodedQuery}&limit=5&appid=${api_key}`;
 	},
 };

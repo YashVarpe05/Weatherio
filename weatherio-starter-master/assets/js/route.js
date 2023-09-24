@@ -7,9 +7,8 @@
 
 "use strict";
 
-import { query } from "express";
-import { updateWeather, error404 } from "./app.js";
-const defaultLocation = "#weather?lat=19.997454&lon=73.789803"; //Nashik location
+import { updateWeather, error404 } from ".app.js";
+const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474"; //London location
 
 const currentLocation = () => {
 	window.navigator.geolocation.getCurrentPosition(
@@ -27,7 +26,7 @@ const currentLocation = () => {
  * @param {string} query Searched query
  */
 
-const searchedLocation = (query) => updateWeather(...query.split("&"));
+const searchedLocation = (query) => updateWeather(query.split("&"));
 //
 const routes = new Map([
 	["/current-location", currentLocation],
