@@ -5,8 +5,7 @@
  * @author yash_varpe <yashvarpe2005@gmail.com>
  */
 
-"use strict ";
-
+"use strict";
 const api_key = "7fb0f71797c059a1ba3cb7a387646478";
 
 /**
@@ -26,22 +25,22 @@ export const fetchData = (URL, callback) => {
 
 export const url = {
 	currentWeather(lat, lon) {
-		return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`;
+		return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
 	},
 	forecast(lat, lon) {
-		return `https://api.openweathermap.org/data/2.5/forecast?${lan}&${lon}&units=metric`;
+		return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`;
 	},
 	airPollution(lat, lon) {
-		return `http://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}`;
+		return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}`;
 	},
-	reversGeo(lat, lon) {
-		return `http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`;
+	reverseGeo(lat, lon) {
+		return `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5`;
 	},
 	/**
 	 * @param {string} query Searching query eg. 'India' , Maharashtra,London ....etc
 	 */
 	geo(query) {
 		const encodedQuery = encodeURIComponent(query);
-		return `http://api.openweathermap.org/geo/1.0/direct?q=${encodedQuery}&limit=5&appid=${api_key}`;
+		return `https://api.openweathermap.org/geo/1.0/direct?q=${encodedQuery}&limit=5&appid=${api_key}`;
 	},
 };

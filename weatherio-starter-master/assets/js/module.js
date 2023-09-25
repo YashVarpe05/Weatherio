@@ -5,6 +5,7 @@
  * @author codewithsadee <mohammadsadee24@gmail.com>
  */
 // todo: add the 7 day and months and make the function that is use to generate or get the date and time
+"use strict";
 
 export const weekDayNames = [
 	"Sunday",

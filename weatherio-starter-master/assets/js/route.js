@@ -7,14 +7,14 @@
 
 "use strict";
 
-import { updateWeather, error404 } from ".app.js";
+import { updateWeather, error404 } from "./app.js";
 const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474"; //London location
 
 const currentLocation = () => {
 	window.navigator.geolocation.getCurrentPosition(
 		(res) => {
 			const { latitude, longitude } = res.coords;
-			updateWeather(`lat=${latitude}&lon=${longitude}`);
+			updateWeather(latitude, longitude); // Pass the actual latitude and longitude values
 		},
 		(err) => {
 			window.location.hash = defaultLocation;
