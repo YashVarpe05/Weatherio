@@ -2,13 +2,13 @@
 
 # Hi, I'm Yash Varpe! 👋
 
-## 🔗 [Weatherio](https://yashvarpe05.github.io/ister/)
+## 🔗 [Weatherio](https://yashvarpe05.github.io/Weatherio/)
 
 ![Weatherio Logo](./assets/images/logo.png)
 
 Weatherio is a weather app that allows you to check the current weather and forecast for various locations. It provides real-time weather information, including temperature, air quality index, humidity, and more.
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./assets/images/screenshot.jpg)
 
 ## About
 
@@ -30,13 +30,13 @@ To get started with Weatherio, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/weatherio.git
+   git clone          https://github.com/YashVarpe05/Weatherio.git
    ```
 
 2. Go to the project directory
 
    ```bash
-   cd my-project
+   cd Weatherio
    ```
 
 ## Authors
