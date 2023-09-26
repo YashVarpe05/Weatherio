@@ -1,61 +1,52 @@
+# Weatherio - Weather website
 
-# Project Title
+# Hi, I'm Yash Varpe! 👋
 
-A brief description of what this project does and who it's for
+## 🔗 [Weatherio](https://yashvarpe05.github.io/ister/)
 
-## Tech Stack
+![Weatherio Logo](./assets/images/logo.png)
 
-**Client:** HTML, CSS, JavaScript, API
-
-## Demo
-
-Insert gif or link to demo
-
-## Features
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Screenshots
+Weatherio is a weather app that allows you to check the current weather and forecast for various locations. It provides real-time weather information, including temperature, air quality index, humidity, and more.
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-## Run Locally
+## About
 
-Clone the project
+Weatherio is a web-based weather application built with HTML, CSS, and JavaScript. It uses the OpenWeatherMap API to fetch weather data for different locations. This app is designed to be simple and user-friendly, providing essential weather information at a glance.
 
-```bash
-  git clone https://link-to-project
-```
+## Features
 
-Go to the project directory
+- Current weather display with temperature, description, and location.
+- Air quality index (AQI) information.
+- Sunrise and sunset times.
+- Hourly and 5-day weather forecasts.
+- Search for weather information by city name.
+- Option to use the current location.
 
-```bash
-  cd my-project
-```
+## Getting Started
 
-Open with VSCode
+To get started with Weatherio, follow these steps:
 
-```bash
-  code .
-```
+1. Clone the repository to your local machine:
 
-Open with live server
+   ```bash
+   git clone https://github.com/your-username/weatherio.git
+   ```
 
-```bash
-  npm run start
-```
+2. Go to the project directory
 
+   ```bash
+   cd my-project
+   ```
 
 ## Authors
 
-- [@codewithsadee](https://www.github.com/codewithsadee)
+- [@yashvarpe05](https://www.github.com/YashVarpe05)
+
+## 🚀 About Me
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-varpe-960703234/)
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## Support
-
-For support, Join my [Patreon Comunity](https://www.patreon.com/codewithsadee/membership) or Subscribe My [YouTube Channel](https://youtube.com/@codewithsadee).
